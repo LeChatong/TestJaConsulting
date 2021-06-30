@@ -1,0 +1,28 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Login Form -->
+    <form>
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Fiscal Number">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+
+
+  </div>
+</div>
+
+<div class="row">
+  <table class="table table-responsive">
+    <thead>
+    <tr>
+      <th>Numero Fiscal</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fisc of fiscals">
+        <td>{{ fisc.fiscal_number }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
