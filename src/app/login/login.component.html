@@ -1,27 +1,31 @@
 <div class="wrapper fadeInDown">
   <div id="formContent">
     <!-- Tabs Titles -->
-
+    <br/>
+    <h5>Saisissez le numéro fiscal du client dont vous comptez bloquer les accès</h5>
     <!-- Login Form -->
-    <form (ngSubmit)="onSubmit()">
-      <input type="text" class="fadeIn second" name="fiscal_number" placeholder="Fiscal Number">
-      <input type="submit" class="fadeIn fourth" value="Enregistrer">
+    <form>
+      <label>Numéro Fiscal de client</label>
+      <input type="text" id="fiscal_number" [(ngModel)]="customer.fiscal_number" class="fadeIn second" name="fiscal_number" placeholder="Fiscal Number">
+      <button type="button" class="btn btn-primary" (click)="onSubmit()">Enregistrer</button>
+      <br/>
     </form>
+    <br/>
+    <div class="container">
+      <table class="table table-responsive">
+        <thead>
+        <tr>
+          <th>Numero Fiscal bloqué</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let fisc of fiscals">
+          <td>{{ fisc.fiscal_number }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
 
   </div>
 </div>
 
-<div class="container">
-  <table class="table table-responsive">
-    <thead>
-    <tr>
-      <th>Numero Fiscal bloqué</th>
-    </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let fisc of fiscals">
-        <td>{{ fisc.fiscal_number }}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>

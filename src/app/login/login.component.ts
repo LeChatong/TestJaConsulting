@@ -11,14 +11,15 @@ export class LoginComponent implements OnInit {
 
   fiscals: any;
 
-  @Input()
-  fiscal_number: String;
+  customer = {
+    fiscal_number: null
+  };
+
 
   headers= new HttpHeaders()
   .set('content-type', 'application/json')
   .set('Access-Control-Allow-Origin', 'http://localhost:8000');
   constructor(public http: HttpClient) {
-    this.fiscal_number = '';
   }
 
   ngOnInit(): void {
@@ -39,7 +40,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    this.http.post('http://localhost:8000/customer', { 'fiscal_number': this.fiscal_number }).subscribe(
+    this.http.post('http://localhost:8000/customer', this.customer, { 'headers': this.headers }).subscribe(
       (resp) => {
         console.log('Connexion OK');
         console.log(resp);
