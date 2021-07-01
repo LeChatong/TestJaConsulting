@@ -3,20 +3,19 @@
     <!-- Tabs Titles -->
 
     <!-- Login Form -->
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Fiscal Number">
-      <input type="submit" class="fadeIn fourth" value="Log In">
+    <form (ngSubmit)="onSubmit()">
+      <input type="text" class="fadeIn second" name="fiscal_number" placeholder="Fiscal Number">
+      <input type="submit" class="fadeIn fourth" value="Enregistrer">
     </form>
-
 
   </div>
 </div>
 
-<div class="row">
+<div class="container">
   <table class="table table-responsive">
     <thead>
     <tr>
-      <th>Numero Fiscal</th>
+      <th>Numero Fiscal bloqué</th>
     </tr>
     </thead>
     <tbody>
